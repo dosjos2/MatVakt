@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MatVakt – matvarer, middag og handleliste</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <section id="login" hidden>
+    <div class="card login-card">
+      <h1>🥕 MatVakt</h1>
+      <p>Hold oversikt over matvarene dine, bruk opp det som snart går ut på dato, og få middagsforslag.</p>
+      <div id="google-btn"></div>
+      <button id="demo-btn" class="primary" hidden>Fortsett med demo-innlogging</button>
+      <p id="login-note" class="muted"></p>
+    </div>
+  </section>
+
+  <div id="app" hidden>
+    <header>
+      <h1>🥕 MatVakt</h1>
+      <nav>
+        <button data-tab="food" class="active">Matvarer</button>
+        <button data-tab="suggest">Middagsforslag</button>
+        <button data-tab="recipes">Oppskrifter</button>
+        <button data-tab="shopping">Handleliste <span id="shop-count" class="badge" hidden></span></button>
+      </nav>
+      <div class="user"><span id="user-name"></span> <button id="logout">Logg ut</button></div>
+    </header>
+    <main id="view"></main>
+  </div>
+
+  <div id="modal" class="modal" hidden><div class="modal-body"><button class="close" id="modal-close">✕</button><div id="modal-content"></div></div></div>
+  <div id="toast" class="toast" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>
